@@ -11,6 +11,11 @@
     * [Packaging a Petalinux Project](#packaging-a-petalinux-project)
     * [Preparing the Arch Linux ARM rootfs](#preparing-the-arch-linux-arm-rootfs)
     * [Preparing an SD card](#preparing-an-sd-card)
+3. [Booting the Kria KV260 board](#booting-the-kria-kv260-board)
+    * [Setting up the Arch Linux ARM](#setting-up-the-arch-linux-arm)
+    * [Installing packages](#installing-packages)
+    * [System information](#system-information)
+    * [Installing fgpautil](#installing-fpgautil)
 
 
 ## FPGA Project (Kria KV260)
@@ -108,12 +113,84 @@ sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C ~/rootfs
 ```
 
 ### Preparing an SD card
-Here are the steps to prepare the SD card for the PetaLinux SD card ext file system boot.
+Here are the steps to prepare an SD card for the PetaLinux SD card ext file system boot.
 
 The SD card is formatted with two partitions using a partition editor such as GParted. The first partition should be at least 500 MB in size and formatted as a FAT32 file system. Ensure that there is 4 MB of free space preceding the partition. The first partition contains the boot loader, device tree, and kernel images. The second partition should be formatted as an ext4 files system and can take up the remaining space on the SD card. This partition stores the system root file system.
 
 1. Label the first partition as BOOT.
 2. Label the second partition as RootFS.
+
+    See the following image for an example of the SD card partition:
+    ![Example SD Card partition](Images\sd_card_partitions.jpg "Example SD Card partition with GParted")
+
 3. Copy the files as follows:
-    * fat32 partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
-    * ext4 partition: the rootfs that has been prepared earlier needs to be copied to the partition
+    * FAT32 partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
+    * EXT4 partition: the rootfs that has been prepared earlier needs to be copied to the partition
+
+After the SD card is prepared, it is possible to boot the Kria KV260 board with the SD card.
+
+## Booting the Kria KV260 board
+The Kria KV260 board is booted with the SD card. The SD card is inserted into the SD card slot on the Kria KV260 board. The board is powered on and the boot process is started. The boot process is shown on the serial console such as PuTTY.
+After the first boot of the Arch Linux ARM, the following will be displayed on the serial console:
+```bash
+Arch Linux 6.1.30-xilinx-v2023.2 (ttyPS0)
+
+alarm login:
+```
+The default username is **alarm** and the default password is **alarm**.
+After the login, similar information will be displayed on the serial console:
+```bash
+Last login: Thu Jan 25 02:27:46 from 192.168.1.2
+[alarm@alarm ~]$
+```
+### Setting up the Arch Linux ARM
+After the first boot, it is necessary to go to the root (the password is **root**). The following commands are executed:
+```bash
+[alarm@alarm ~]$ su
+Password:
+[root@alarm alarm]# pacman-key --init
+[root@alarm alarm]# pacman-key --populate
+[root@alarm alarm]# pacman -Syu
+[root@alarm alarm]# pacman -S sudo
+[root@alarm alarm]# reboot
+```
+After the updates, the installing of the sudo package and the reboot, it is necessary to log in as root and add a new user. The following commands are executed:
+```bash
+[root@alarm alarm]# nano /etc/sudoers
+```
+and add the following line:
+```bash
+ALL ALL=(ALL:ALL) ALL 
+```
+Save and exit the file. Then add a new user with the following command:
+```bash
+[root@alarm alarm]# useradd -m <username>
+```
+and set a password for the new user:
+```bash
+[root@alarm alarm]# passwd <username>
+```
+Also, it is possible to change the host name with the following command:
+```bash
+[root@alarm alarm]# nano /etc/hostname
+```
+Change the host name to the desired one. Save and exit the file and reboot.
+
+Login with your new user name and password. In my case, the following is displayed:
+```bash
+[vtuser@kria-kv260 ~]$ 
+```
+### Installing packages
+After the login, it is necessary to install the following packages. For example:
+```bash
+[vtuser@kria-kv260 ~]$ sudo pacman -S python3
+[vtuser@kria-kv260 ~]$ sudo pacman -S gcc
+[vtuser@kria-kv260 ~]$ sudo pacman -S neofetch
+```
+### System information
+Now the Arch Linux ARM is ready to use. Write the following command to see the system information:
+```bash
+[vtuser@kria-kv260 ~]$ neofetch
+```
+You will see the following information:
+![System information](Images\arch_linux_kria.jpg "System information")
