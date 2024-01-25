@@ -16,6 +16,7 @@
     * [Installing packages](#installing-packages)
     * [System information](#system-information)
     * [Installing fgpautil](#installing-fpgautil)
+    * [Configuring the FPGA](#configuring-the-fpga)
 
 
 ## FPGA Project (Kria KV260)
@@ -194,3 +195,34 @@ Now the Arch Linux ARM is ready to use. Write the following command to see the s
 ```
 You will see the following information:
 ![System information](Images/arch_linux_kria.jpg "System information")
+
+### Installing fgpautil
+The fgpautil package is required to load the FPGA bitstream. To install the fgpautil make the following steps:
+Copy the fgpautil folder to the home directory using SFTP. Then go to the fgpautil folder and execute the following commands:
+```bash
+[vtuser@kria-kv260 ~]$ cd fgpautil
+[vtuser@kria-kv260 fgpautil]$ ./install.sh
+```
+After the successful installation, the following is displayed:
+```bash
+Files copied successfully from /home/vtuser/fpgautil to /usr/bin
+fpgautil is now executable in /usr/bin
+```
+### Configuring the FPGA
+Create a folder for the FPGA bitstream. For example:
+```bash
+[vtuser@kria-kv260 ~]$ mkdir Bitstreams
+```
+Copy the bitstream to the folder using SFTP. 
+
+After the installation of the fgpautil, it is possible to configure the FPGA. The following commands are executed:
+```bash
+[vtuser@kria-kv260 Bitstreams]$ sudo fpgautil -b ~/Bitstreams/kria_kv260.bit
+``` 
+After the successful configuration, the following is displayed:
+```bash
+Time taken to load BIN is 153.000000 Milli Seconds
+BIN FILE loaded through FPGA manager successfully
+```
+
+Now the FPGA is configured and ready to use.
