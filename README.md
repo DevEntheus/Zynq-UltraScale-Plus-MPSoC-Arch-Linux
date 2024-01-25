@@ -22,7 +22,7 @@ A new project is created with the Vivado New Project Wizard. After the project i
 * System ILA (connected to the M_AXI_HPM0_LPD interface)
 
 See the following image for the block design:
-![Example FPGA Design to create Petalinux project](Images\fpga_design.jpg "FPGA Design Example")
+![Example FPGA Design to create Petalinux project](Images/fpga_design.jpg "FPGA Design Example")
 
 This is an simple example of a FPGA design to create a Petalinux project based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html). 
 
