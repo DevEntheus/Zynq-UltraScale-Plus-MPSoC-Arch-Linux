@@ -23,7 +23,7 @@
 
 The FPGA project was created with Vivado ML Edition 2023.2.
 ### Requirements
-* [Vivado ML Edition - 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
+* [Vivado ML Edition 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
 
 ### FPGA Design
 A new project is created with the Vivado New Project Wizard. After the project is created, the block design is created with the Vivado IP Integrator. The block design is created with the following IP blocks:
@@ -35,9 +35,9 @@ A new project is created with the Vivado New Project Wizard. After the project i
 * System ILA (connected to the M_AXI_HPM0_LPD interface)
 
 See the following image for the block design:
-![Example FPGA Design to create Petalinux project](Images/fpga_design.jpg "FPGA Design Example")
+![Example of the FPGA Design to create Petalinux project](Images/fpga_design.jpg "FPGA Design Example")
 
-This is an simple example of an FPGA design to create a Petalinux project based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html). 
+This is a simple example of an FPGA design to create a Petalinux project based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html). 
 
 After creating the block design, the design is validated, synthesized, implemented and generated bitstream. Then it is required to export hardware, including bitstream *<project_name>.xsa*. The XSA file is used to create a Petalinux project. The XSA file *kria_kv260_bd_wrapper.xsa* is located in the folder **Kria KV260**.
 
@@ -101,17 +101,17 @@ After the project is packaged, the BOOT.BIN file is located in the folder **imag
 ### Preparing the Arch Linux ARM rootfs
 The Arch Linux ARM rootfs is prepared with the following commands:
 * Download the latest Arch Linux ARM rootfs to the home directory:
-```bash
-wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
-```
+    ```bash
+    wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+    ```
 * Create a folder for the rootfs:
-```bash
-mkdir rootfs
-```
+    ```bash
+    mkdir rootfs
+    ```
 * Extract the rootfs to the folder:
-```bash
-sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C ~/rootfs
-```
+    ```bash
+    sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C ~/rootfs
+    ```
 
 ### Preparing an SD card
 Here are the steps to prepare an SD card for the PetaLinux SD card ext file system boot.
@@ -159,7 +159,7 @@ After the updates, the installing of the sudo package and the reboot, it is nece
 ```bash
 [root@alarm alarm]# nano /etc/sudoers
 ```
-and add the following line:
+Add the following line:
 ```bash
 ALL ALL=(ALL:ALL) ALL 
 ```
@@ -167,7 +167,7 @@ Save and exit the file. Then add a new user with the following command:
 ```bash
 [root@alarm alarm]# useradd -m <username>
 ```
-and set a password for the new user:
+Set a password for the new user:
 ```bash
 [root@alarm alarm]# passwd <username>
 ```
@@ -197,7 +197,7 @@ You will see the following information:
 ![System information](Images/arch_linux_kria.jpg "System information")
 
 ### Installing fgpautil
-The fgpautil package is required to load the FPGA bitstream. To install the fgpautil make the following steps:
+The fgpautil package is required to load the FPGA bitstream. To install the fgpautil, perform the following steps:
 Copy the fgpautil folder to the home directory using SFTP. Then go to the fgpautil folder and execute the following commands:
 ```bash
 [vtuser@kria-kv260 ~]$ cd fgpautil
