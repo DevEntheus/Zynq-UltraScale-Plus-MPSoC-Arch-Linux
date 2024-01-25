@@ -1,0 +1,5 @@
+Latest Arch Linux ARM release:
+https://archlinuxarm.org/about/downloads
+
+Downloads from the command line:
+wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
