@@ -1,6 +1,6 @@
 # Zynq™ UltraScale+™ MPSoC (Kria KV260) Arch Linux
 
-1. [FPGA Project Kria KV260](#fpga-project-kria-kv260)
+1. [FPGA Project (Kria KV260)](#fpga-project-kria-kv260)
     * [Requirements](#requirements)
     * [FPGA Design](#fpga-design)
 2. [Petalinux Project](#petalinux-project)
@@ -21,7 +21,7 @@
 
 ## FPGA Project (Kria KV260)
 
-The FPGA project was created with Vivado ML Edition 2023.2.
+The FPGA project is created with Vivado ML Edition 2023.2.
 ### Requirements
 * [Vivado ML Edition 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
 
