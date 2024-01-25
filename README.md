@@ -121,7 +121,7 @@ The SD card is formatted with two partitions using a partition editor such as GP
 2. Label the second partition as RootFS.
 
     See the following image for an example of the SD card partition:
-    ![Example SD Card partition](Images\sd_card_partitions.jpg "Example SD Card partition with GParted")
+    ![Example SD Card partition](Images/sd_card_partitions.jpg "Example SD Card partition with GParted")
 
 3. Copy the files as follows:
     * FAT32 partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
@@ -193,4 +193,4 @@ Now the Arch Linux ARM is ready to use. Write the following command to see the s
 [vtuser@kria-kv260 ~]$ neofetch
 ```
 You will see the following information:
-![System information](Images\arch_linux_kria.jpg "System information")
+![System information](Images/arch_linux_kria.jpg "System information")
