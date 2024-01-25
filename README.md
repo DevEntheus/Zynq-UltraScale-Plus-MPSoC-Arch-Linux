@@ -6,7 +6,7 @@ This repository contains the necessary files to build an Arch Linux image for th
 
 ## Build
 
-![Example FPGA Design to create Petalinux project](Images\fpga_design.jpg "FPGA Design Example")
+![Example FPGA Design to create Petalinux project]([Images\fpga_design.jpg](https://github.com/DevEntheus/Zynq-UltraScale-Plus-MPSoC-Arch-Linux/blob/main/Images/fpga_design.jpg)https://github.com/DevEntheus/Zynq-UltraScale-Plus-MPSoC-Arch-Linux/blob/main/Images/fpga_design.jpg "FPGA Design Example")
 
 
 ```
