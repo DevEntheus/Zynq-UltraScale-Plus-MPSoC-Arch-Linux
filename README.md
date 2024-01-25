@@ -108,3 +108,12 @@ sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C ~/rootfs
 ```
 
 ### Preparing an SD card
+Here are the steps to prepare the SD card for the PetaLinux SD card ext file system boot.
+
+The SD card is formatted with two partitions using a partition editor such as GParted. The first partition should be at least 500 MB in size and formatted as a FAT32 file system. Ensure that there is 4 MB of free space preceding the partition. The first partition contains the boot loader, device tree, and kernel images. The second partition should be formatted as an ext4 files system and can take up the remaining space on the SD card. This partition stores the system root file system.
+
+1. Label the first partition as BOOT.
+2. Label the second partition as RootFS.
+3. Copy the files as follows:
+    * fat32 partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
+    * ext4 partition: the rootfs that has been prepared earlier needs to be copied to the partition
