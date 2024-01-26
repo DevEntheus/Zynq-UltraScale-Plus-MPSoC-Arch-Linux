@@ -121,7 +121,7 @@ The Arch Linux ARM rootfs is prepared with the following commands:
     ```bash
     mkdir rootfs
     ```
-* Extract the rootfs to the folder:
+* Extract the Arch Linux ARM to the rootfs folder:
     ```bash
     sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C ~/rootfs
     ```
