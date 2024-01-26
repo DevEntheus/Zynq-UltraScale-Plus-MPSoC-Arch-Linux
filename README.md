@@ -113,7 +113,7 @@ After the project is packaged, the BOOT.BIN file is located in the folder **imag
 
 ### Preparing the Arch Linux ARM rootfs
 The Arch Linux ARM rootfs is prepared with the following commands:
-* Download the latest Arch Linux ARM rootfs to the home directory:
+* Download the latest Arch Linux ARM to the home directory:
     ```bash
     wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
     ```
