@@ -228,7 +228,7 @@ Create a folder for the FPGA bitstream. For example:
 ```
 Copy the bitstream to the folder using SFTP. 
 
-After the installation of the fgpautil, it is possible to configure the FPGA. The following commands are executed:
+After the installation of the fpgautil, it is possible to configure the FPGA. The following commands are executed:
 ```bash
 [vtuser@kria-kv260 Bitstreams]$ sudo fpgautil -b ~/Bitstreams/kria_kv260.bit
 ``` 
