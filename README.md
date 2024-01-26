@@ -1,9 +1,9 @@
 # Zynq™ UltraScale+™ MPSoC (Kria KV260) Arch Linux
-
-1. [FPGA Project (Kria KV260)](#fpga-project-kria-kv260)
+1. [Overview](#overview)
+2. [FPGA Project (Kria KV260)](#fpga-project-kria-kv260)    
     * [Requirements](#requirements)
     * [FPGA Design](#fpga-design)
-2. [Petalinux Project](#petalinux-project)
+3. [Petalinux Project](#petalinux-project)
     * [Requirements](#requirements-1)
     * [Creating a Petalinux Project](#creating-a-petalinux-project)
     * [Configuring a Petalinux Project](#configuring-a-petalinux-project)  
@@ -11,17 +11,30 @@
     * [Packaging a Petalinux Project](#packaging-a-petalinux-project)
     * [Preparing the Arch Linux ARM rootfs](#preparing-the-arch-linux-arm-rootfs)
     * [Preparing an SD card](#preparing-an-sd-card)
-3. [Booting the Kria KV260 board](#booting-the-kria-kv260-board)
+4. [Booting the Kria KV260 board](#booting-the-kria-kv260-board)
     * [Setting up the Arch Linux ARM](#setting-up-the-arch-linux-arm)
     * [Installing packages](#installing-packages)
     * [System information](#system-information)
     * [Installing fgpautil](#installing-fpgautil)
     * [Configuring the FPGA](#configuring-the-fpga)
+5. [Remote access to the Kria KV260 board](#remote-access-to-the-kria-kv260-board)
+    * [Remote access using SSH](#remote-access-using-ssh)
+    * [Remote development using Visual Studio Code](#remote-development-using-visual-studio-code)
 
+## Overview
+The project aims to create a robust and customizable development environment for the Zynq UltraScale+ MPSoC, enabling users to deploy Arch Linux ARM on the Kria KV260 board. This environment facilitates FPGA configuration and Linux system development for a wide range of embedded applications. The project is based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html) and [PetaLinux Tools 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html). For detailed information and updates refer to the official documentation and the specific hardware platform:
+* [Vivado Design Suite User Guide](https://docs.xilinx.com/r/en-US/ug973-vivado-release-notes-install-license/Release-Notes)
+* [PetaLinux Tools Documentation: Reference Guide (UG1144)
+](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide)
+* [Zynq UltraScale+ MPSoC](https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html) [- Wiki](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/444006775/Zynq+UltraScale+MPSoC)
+* [Kria KV260 Vision AI Starter Kit Data Sheet (DS986)
+](https://docs.xilinx.com/r/en-US/ds986-kv260-starter-kit/Summary)
+* [Kria KV260 Vision AI Starter Kit User Guide (UG1089)
+](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Summary)
+
+Additionally, the guide emphasizes configuration flexibility, and adherence to best practices for FPGA and Linux development. When Arch Linux ARM is installed on the Zynq UltraScale+ MPSoC, its flexibility and customization capabilities make it an ideal environment for FPGA development. As a general-purpose Linux distribution, it accommodates diverse applications, ensuring a continuous influx of the latest updates. The broad hardware support inherent in Arch Linux ARM extends seamlessly to the specific requirements of the Zynq UltraScale+ MPSoC, making it well-suited for embedded systems development on this platform.
 
 ## FPGA Project (Kria KV260)
-
-The FPGA project is created with Vivado ML Edition 2023.2.
 ### Requirements
 * [Vivado ML Edition 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
 
@@ -224,5 +237,29 @@ After the successful configuration, the following is displayed:
 Time taken to load BIN is 153.000000 Milli Seconds
 BIN FILE loaded through FPGA manager successfully
 ```
-
 Now the FPGA is configured and ready to use.
+
+## Remote access to the Kria KV260 board
+### Remote access using SSH
+To access the Kria KV260 board remotely, it is necessary to know the IP address of the board. To find the IP address, the following command is executed:
+```bash
+[vtuser@kria-kv260 ~]$ ip a
+or
+[vtuser@kria-kv260 ~]$ ifconfig
+```
+If ifconfig is not installed, it is possible to install it with the following command:
+```bash
+[vtuser@kria-kv260 ~]$ sudo pacman -S net-tools
+```
+After the IP address is found, it is possible to access the board remotely using SSH. For example:
+```bash
+ssh <username>@<ip_address>
+```
+### Remote development using Visual Studio Code
+To develop remotely using Visual Studio Code, it is necessary to install the Remote Development extension pack. After the extension pack is installed, it is possible to connect to the Kria KV260 board using SSH. For example:
+```bash
+Open Remote Window -> Remote SSH -> Connect to Host...
+or
+shift + ctrl + p -> Remote-SSH: Connect to Host...
+```
+When connecting to the host for the first time, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
