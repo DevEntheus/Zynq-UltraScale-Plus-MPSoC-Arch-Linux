@@ -22,8 +22,6 @@
     * [Remote development using Visual Studio Code](#remote-development-using-visual-studio-code)
 6. [Debugging the Kria KV260 board](#debugging-the-kria-kv260-board)
     * [Sanity test](#sanity-test)
-    * [Shmoo ploat](#shmoo-plot)
-    * [Debugging with ILA](#debugging-with-ila)
 
 ## Overview
 The project aims to create a robust and customizable development environment for the Zynq UltraScale+ MPSoC, enabling users to deploy Arch Linux ARM on the Kria KV260 board. This environment facilitates FPGA configuration and Linux system development for a wide range of embedded applications. The project is based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html) and [PetaLinux Tools 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html). For detailed information and updates refer to the official documentation and the specific hardware platform:
