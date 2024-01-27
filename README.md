@@ -20,6 +20,10 @@
 5. [Remote access to the Kria KV260 board](#remote-access-to-the-kria-kv260-board)
     * [Remote access using SSH](#remote-access-using-ssh)
     * [Remote development using Visual Studio Code](#remote-development-using-visual-studio-code)
+6. [Debugging the Kria KV260 board](#debugging-the-kria-kv260-board)
+    * [Sanity test](#sanity-test)
+    * [Shmoo ploat](#shmoo-plot)
+    * [Debugging with ILA](#debugging-with-ila)
 
 ## Overview
 The project aims to create a robust and customizable development environment for the Zynq UltraScale+ MPSoC, enabling users to deploy Arch Linux ARM on the Kria KV260 board. This environment facilitates FPGA configuration and Linux system development for a wide range of embedded applications. The project is based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html) and [PetaLinux Tools 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html). For detailed information and updates refer to the official documentation and the specific hardware platform:
@@ -263,3 +267,15 @@ or
 shift + ctrl + p -> Remote-SSH: Connect to Host...
 ```
 When connecting to the host for the first time, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
+
+## Debugging the Kria KV260 board
+### Sanity test
+Sanity test is a simple test to check the functionality of the FPGA. The following commands are executed:
+```bash
+[vtuser@kria-kv260 ~]$ sudo python3 ~/Debug/main.py
+```
+If the test is successful, the following is displayed:
+![Sanity test passed](Images/sanity_test_passed.jpg "Sanity test")
+
+If the test is not successful, the following is displayed:
+![Sanity test failed](Images/sanity_test_failed.jpg "Sanity test")
