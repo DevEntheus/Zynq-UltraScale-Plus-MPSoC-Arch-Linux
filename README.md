@@ -20,7 +20,7 @@
 5. [Remote access to the Kria KV260 board](#remote-access-to-the-kria-kv260-board)
     * [Remote access using SSH](#remote-access-using-ssh)
     * [Remote development using Visual Studio Code](#remote-development-using-visual-studio-code)
-6. [Debugging the Kria KV260 board](#debugging-the-kria-kv260-board)
+6. [Testing the Kria KV260 board](#debugging-the-kria-kv260-board)
     * [Sanity test](#sanity-test)
 
 ## Overview
@@ -266,11 +266,12 @@ shift + ctrl + p -> Remote-SSH: Connect to Host...
 ```
 When connecting to the host for the first time, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
 
-## Debugging the Kria KV260 board
+## Testing the Kria KV260 board
 ### Sanity test
-Sanity test is a simple test to check the functionality of the FPGA. The following commands are executed:
+Sanity test is a simple test to check the functionality of the FPGA.
+Copy the TestCases folder to the home directory using SFTP. Execute the following command to run the test:
 ```bash
-[vtuser@kria-kv260 ~]$ sudo python3 ~/Debug/main.py
+[vtuser@kria-kv260 ~]$ sudo python3 ~/TestCases/sanity_test/main.py
 ```
 If the test is successful, the following is displayed:
 ![Sanity test passed](Images/sanity_test_passed.jpg "Sanity test")
