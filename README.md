@@ -41,7 +41,7 @@ Additionally, the guide emphasizes configuration flexibility, and adherence to b
 * [Vivado ML Edition 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html)
 
 ### FPGA Design
-A new project is created with the Vivado New Project Wizard. After the project is created, the block design is created with the Vivado IP Integrator. The block design is created with the following IP blocks:
+A new project is created with the Vivado New Project Wizard. After the project is created, the block design is created with the Vivado IP Integrator. The block design consists of the following IP blocks:
 * Zynq UltraScale+ MPSoC (set up in accordance with the requirements. The file Zynq UltraScale+ MPSoC LPD.tcl with presets for the Zynq UltraScale+ MPSoC can be found in the folder **Kria KV260**)
 * Processor System Reset
 * AXI Interconnect
@@ -54,7 +54,7 @@ See the following image for the block design:
 
 This is a simple example of an FPGA design to create a Petalinux project based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html). 
 
-After creating the block design, the design is validated, synthesized and implemented and a bitstream is generated. Then it is required to export hardware, including bitstream *<project_name>.xsa*. The XSA file is used to create a Petalinux project. The XSA file *kria_kv260_bd_wrapper.xsa* is located in the folder **Kria KV260**.
+After the block design has been created, the design is validated, synthesized and implemented and a bitstream is generated. Then it is required to export hardware, including bitstream *<project_name>.xsa*. The XSA file is used to create a Petalinux project. The XSA file *kria_kv260_bd_wrapper.xsa* is located in the folder **Kria KV260**.
 
 When the XSA file has been exported successfully, a Petalinux project is ready to be created.
 
@@ -213,11 +213,13 @@ You will see the following information:
 
 ### Installing fgpautil
 The fgpautil package is required to load the FPGA bitstream. To install the fgpautil, perform the following steps:
-Copy the fgpautil folder to the home directory using SFTP. Then go to the fgpautil folder and execute the following commands:
-```bash
-[vtuser@kria-kv260 ~]$ cd fgpautil
-[vtuser@kria-kv260 fgpautil]$ ./install.sh
-```
+
+* Copy the fgpautil folder to the home directory using SFTP.
+* Go to the fgpautil folder and execute the following commands:
+    ```bash
+    [vtuser@kria-kv260 ~]$ cd fgpautil
+    [vtuser@kria-kv260 fgpautil]$ ./install.sh
+    ```
 After the successful installation, the following is displayed:
 ```bash
 Files copied successfully from /home/vtuser/fpgautil to /usr/bin
@@ -264,7 +266,7 @@ Open Remote Window -> Remote SSH -> Connect to Host...
 or
 shift + ctrl + p -> Remote-SSH: Connect to Host...
 ```
-When connecting to the host for the first time, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
+When connecting to the host, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
 
 ## Testing the Kria KV260 board
 ### Sanity test
