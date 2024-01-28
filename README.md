@@ -15,7 +15,7 @@
     * [Setting up the Arch Linux ARM](#setting-up-the-arch-linux-arm)
     * [Installing packages](#installing-packages)
     * [System information](#system-information)
-    * [Installing fgpautil](#installing-fpgautil)
+    * [Installing fpgautil](#installing-fpgautil)
     * [Configuring the FPGA](#configuring-the-fpga)
 5. [Remote access to the Kria KV260 board](#remote-access-to-the-kria-kv260-board)
     * [Remote access using SSH](#remote-access-using-ssh)
@@ -211,14 +211,14 @@ Now the Arch Linux ARM is ready to use. Write the following command to see the s
 You will see the following information:
 ![System information](Images/arch_linux_kria.jpg "System information")
 
-### Installing fgpautil
-The fgpautil package is required to load the FPGA bitstream. To install the fgpautil, perform the following steps:
+### Installing fpgautil
+The fpgautil package is required to load the FPGA bitstream. To install the fpgautil, perform the following steps:
 
-* Copy the fgpautil folder to the home directory using SFTP.
-* Go to the fgpautil folder and execute the following commands:
+* Copy the fpgautil folder to the home directory using SFTP.
+* Go to the fpgautil folder and execute the following commands:
     ```bash
-    [vtuser@kria-kv260 ~]$ cd fgpautil
-    [vtuser@kria-kv260 fgpautil]$ ./install.sh
+    [vtuser@kria-kv260 ~]$ cd fpgautil
+    [vtuser@kria-kv260 fpgautil]$ ./install.sh
     ```
 After the successful installation, the following is displayed:
 ```bash
