@@ -273,8 +273,8 @@ Copy the TestCases folder to the home directory using SFTP. Execute the followin
 ```bash
 [vtuser@kria-kv260 ~]$ sudo python3 ~/TestCases/sanity_test/main.py
 ```
+If the test is not successful, a similar message is displayed:
+![Sanity test failed](Images/sanity_test_failed.jpg "Sanity test")
+
 If the test is successful, the following is displayed:
 ![Sanity test passed](Images/sanity_test_passed.jpg "Sanity test")
-
-If the test is not successful, the following is displayed:
-![Sanity test failed](Images/sanity_test_failed.jpg "Sanity test")
