@@ -163,8 +163,8 @@ The SD card is formatted with two partitions using a partition manager. The firs
     ![Example SD Card partition](Images/sd_card_partitions.jpg "Example SD Card partition with partition manager")
 
 3. Copy the files as follows:
-    * FAT32 partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
-    * EXT4 partition: extract the Arch Linux ARM rootfs to the root of the partition with the following command:
+    * FAT32 [BOOT] partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
+    * EXT4 [RootFS] partition: extract the Arch Linux ARM rootfs to the root of the partition with the following command:
         ```bash
         sudo tar -xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C /media/<username>/RootFS
         ```
