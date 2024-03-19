@@ -117,7 +117,7 @@ If any changes are needed to the rootfs, it is possible to implement the changes
 petalinux-config -c rootfs
 ```
 ### Creating a Petalinux Project from BSP
-Create a Petalinux project from the BSP file with the following command:
+Create a Petalinux project from the [Kria KV260 Starter Kit BSP](https://www.xilinx.com/member/forms/download/xef.html?filename=xilinx-kv260-starterkit-v2023.2-10140544.bsp) file with the following command:
 ```bash
 petalinux-create --type project --source <path to the BSP file> --name <project name>
 cd <project name>
