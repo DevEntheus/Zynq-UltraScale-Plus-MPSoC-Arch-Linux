@@ -37,14 +37,14 @@ Furthermore, the project extends its utility by offering the possibility of remo
 Ultimately, this project serves as a valuable resource for developers seeking to leverage the power of Arch Linux ARM in conjunction with the advanced features of the Zynq UltraScale+ MPSoC for their embedded systems projects, while also enabling efficient remote development workflows.
 ## Overview
 The project aims to create a robust and customizable development environment for the Zynq UltraScale+ MPSoC, enabling users to deploy Arch Linux ARM on the Kria KV260 board. This environment facilitates FPGA configuration and Linux system development for a wide range of embedded applications. The project is based on the [Kria KV260](https://www.xilinx.com/products/som/kria/kv260-vision-starter-kit.html) and [PetaLinux Tools 2023.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html). For detailed information and updates refer to the official documentation and the specific hardware platform:
-* [Vivado Design Suite User Guide](https://docs.xilinx.com/r/en-US/ug973-vivado-release-notes-install-license/Release-Notes)
+* [Vivado Design Suite User Guide](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license/Release-Notes)
 * [PetaLinux Tools Documentation: Reference Guide (UG1144)
-](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide)
+](https://docs.amd.com/r/en-US/ug1144-petalinux-tools-reference-guide)
 * [Zynq UltraScale+ MPSoC](https://www.xilinx.com/products/silicon-devices/soc/zynq-ultrascale-mpsoc.html) [- Wiki](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/444006775/Zynq+UltraScale+MPSoC)
 * [Kria KV260 Vision AI Starter Kit Data Sheet (DS986)
-](https://docs.xilinx.com/r/en-US/ds986-kv260-starter-kit/Summary)
+](https://docs.amd.com/r/en-US/ds986-kv260-starter-kit/Summary)
 * [Kria KV260 Vision AI Starter Kit User Guide (UG1089)
-](https://docs.xilinx.com/r/en-US/ug1089-kv260-starter-kit/Summary)
+](https://docs.amd.com/r/en-US/ug1089-kv260-starter-kit/Summary)
 
 Additionally, the guide emphasizes configuration flexibility, and adherence to best practices for FPGA and Linux development. When Arch Linux ARM is installed on the Zynq UltraScale+ MPSoC, its flexibility and customization capabilities make it an ideal environment for FPGA development. As a general-purpose Linux distribution, it accommodates diverse applications, ensuring a continuous influx of the latest updates. The broad hardware support inherent in Arch Linux ARM extends seamlessly to the specific requirements of the Zynq UltraScale+ MPSoC, making it well-suited for embedded systems development on this platform.
 
@@ -73,7 +73,7 @@ When the XSA file has been exported successfully, a Petalinux project is ready t
 ## Petalinux Project
 ### Requirements
 * [PetaLinux Tools Documentation: Reference Guide (UG1144)
-](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide)
+](https://docs.amd.com/r/en-US/ug1144-petalinux-tools-reference-guide)
 * [Ubuntu 22.04.2 LTS (virtual machine is preferred)](https://old-releases.ubuntu.com/releases/20.04.2/)
 * [PetaLinux Tools 2023.2 (installed according to the documentation)](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html)
 
