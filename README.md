@@ -3,7 +3,7 @@
 2. [Overview](#overview)
 3. [FPGA Project (Kria KV260)](#fpga-project-kria-kv260)    
     * [Requirements](#requirements)
-    * [Upgrade PetaLinux Tools](#upgrade-petalinux-tools)
+    * [Upgrading PetaLinux Tools](#upgrading-petalinux-tools)
     * [FPGA Design](#fpga-design)
 4. [Petalinux Project](#petalinux-project)
     * [Requirements](#requirements-1)
@@ -13,8 +13,8 @@
     * [Building a Petalinux Project](#building-a-petalinux-project)  
     * [Packaging a Petalinux Project](#packaging-a-petalinux-project)
     * [Preparing the Arch Linux ARM rootfs](#preparing-the-arch-linux-arm-rootfs)
-    * [Create WIC image](#create-wic-image)
-    * [Flash an SD card with WIC image](#flash-an-sd-card-with-wic-image)
+    * [Creating a WIC image](#creating-a-wic-image)
+    * [Flashing an SD card with WIC image](#flashing-an-sd-card-with-wic-image)
     * [Preparing an SD card manually](#preparing-an-sd-card-manually)    
 5. [Booting the Kria KV260 board](#booting-the-kria-kv260-board)
     * [Setting up the Arch Linux ARM](#setting-up-the-arch-linux-arm)
@@ -77,7 +77,7 @@ When the XSA file has been exported successfully, a Petalinux project is ready t
 * [Ubuntu 22.04.2 LTS (virtual machine is preferred)](https://old-releases.ubuntu.com/releases/20.04.2/)
 * [PetaLinux Tools 2023.2 (installed according to the documentation)](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html)
 
-### Upgrade PetaLinux Tools
+### Upgrading PetaLinux Tools
 After the PetaLinux Tools are installed, it is necessary to upgrade the PetaLinux Tools to the latest version. The following commands are executed:
 ```bash
 petalinux-upgrade -u http://petalinux.xilinx.com/sswreleases/rel-v2023/sdkupdate/2023.2/ -p "aarch64" --wget-args "--wait 1 -nH --cut-dirs=4"
@@ -138,14 +138,14 @@ The Arch Linux ARM rootfs is prepared with the following commands:
     ```bash
     wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
     ```
-### Create WIC image
+### Creating a WIC image
 After the project is built, it is possible to create a WIC image. The following command is executed:
 ```bash
 petalinux-package --wic --bootfiles "BOOT.BIN boot.scr Image image.ub ramdisk.cpio.gz.u-boot" --rootfs-file ~/ArchLinuxARM-aarch64-latest.tar.gz --outdir ~/<project name>/images
 ```
 After the WIC image is created, the WIC image is located in the folder **images**.
 
-### Flash an SD card with WIC image
+### Flashing an SD card with WIC image
 The WIC image is written to an SD card using [balenaEtcher](https://www.balena.io/etcher/).
 
 See the following image for an example of writing the WIC image to an SD card:
