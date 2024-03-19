@@ -26,7 +26,7 @@
 6. [Remote access to the Kria KV260 board](#remote-access-to-the-kria-kv260-board)
     * [Remote access using SSH](#remote-access-using-ssh)
     * [Remote development using Visual Studio Code](#remote-development-using-visual-studio-code)
-7. [Testing the Kria KV260 board](#debugging-the-kria-kv260-board)
+7. [Testing the Kria KV260 board](#testing-the-kria-kv260-board)
     * [Sanity test](#sanity-test)
 
 ## Introduction
