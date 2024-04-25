@@ -1,12 +1,24 @@
 {
     "cSpell.words": [
+        "aarch",
         "balena",
         "belena",
         "bootfiles",
         "configurability",
+        "fpgautil",
         "fsbl",
+        "kria",
+        "neofetch",
         "outdir",
+        "pacman",
+        "Peta",
+        "Petalinux",
         "pmufw",
+        "rootfs",
+        "Vivado",
+        "xfvp",
+        "Zynq",
         "zynqmp"
-    ]
+    ],
+    "cSpell.language": "en,en-GB"
 }

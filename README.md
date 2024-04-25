@@ -166,7 +166,7 @@ The SD card is formatted with two partitions using a partition manager. The firs
     * FAT32 [BOOT] partition: BOOT.BIN, boot.scr, Image, image.ub, and ramdisk.cpio.gz.u-boot
     * EXT4 [RootFS] partition: extract the Arch Linux ARM rootfs to the root of the partition with the following command:
         ```bash
-        sudo tar -xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C /media/<username>/RootFS
+        sudo tar xfvp ~/ArchLinuxARM-aarch64-latest.tar.gz -C /media/<username>/RootFS
         ```
 
 After the SD card is prepared, it is possible to boot the Kria KV260 board with the SD card.
@@ -328,6 +328,12 @@ or
 shift + ctrl + p -> Remote-SSH: Connect to Host...
 ```
 When connecting to the host, you will be asked to enter the password. After the password is entered, the connection is established. Once the connection has been established, it is possible to open the folder on the Kria KV260 board.
+
+### Version control Git
+Install Git to Arch Linux:
+```bash
+sudo pacman -S git
+```
 
 ## Testing the Kria KV260 board
 ### Sanity test
